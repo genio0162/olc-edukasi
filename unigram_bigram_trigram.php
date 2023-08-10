@@ -13,7 +13,7 @@ function generateBigrams($inputString) {
         $bigram = $words[$i] . ' ' . $words[$i + 1];
         $isUnique = true;
 
-        // Check if both words in the bigram are unique
+        // Pengecekan kata pada bigrams unik atau tidak , supaya tidak terjadi pengulangan kata setelah koma
         for ($j = 0; $j < count($bigrams); $j++) {
             $existingBigramWords = explode(' ', $bigrams[$j]);
             if (in_array($words[$i], $existingBigramWords) || in_array($words[$i + 1], $existingBigramWords)) {
@@ -38,7 +38,7 @@ function generateTrigrams($inputString) {
         $trigram = $words[$i] . ' ' . $words[$i + 1] . ' ' . $words[$i + 2];
         $isUnique = true;
 
-        // Check if all words in the trigram are unique
+        // Pengecekan kata pada trigrams unik atau tidak , supaya tidak terjadi pengulangan kata setelah koma
         for ($j = 0; $j < count($trigrams); $j++) {
             $existingTrigramWords = explode(' ', $trigrams[$j]);
             if (in_array($words[$i], $existingTrigramWords) || in_array($words[$i + 1], $existingTrigramWords) || in_array($words[$i + 2], $existingTrigramWords)) {
